@@ -40,9 +40,13 @@ export class UserService {
     return this.userRepo.save(user);
   }
   async findUser(usernameOrEmail: string) {
+    console.log(usernameOrEmail);
+
     let user = await this.userRepo.findOne({
       where: { username: usernameOrEmail },
     });
+    console.log(user);
+
     if (!user) {
       const userByEmail = await this.userRepo.findOne({
         where: { email: usernameOrEmail },

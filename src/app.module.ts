@@ -8,6 +8,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { FollowModule } from './follow/follow.module';
+import { PostModule } from './post/post.module';
+import { ExploreModule } from './explore/explore.module';
 
 @Module({
   imports: [
@@ -24,6 +27,9 @@ import { UserModule } from './user/user.module';
     }),
     AuthModule,
     UserModule,
+    FollowModule,
+    PostModule,
+    ExploreModule,
   ],
   providers: [AppResolver],
 })

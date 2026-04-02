@@ -1,4 +1,4 @@
-import { Field, InputType, ObjectType } from '@nestjs/graphql';
+import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
 import { MinLength } from 'class-validator';
 
 @InputType()
@@ -27,4 +27,10 @@ export class LoginInput {
 export class AuthPayload {
   @Field()
   access_token: string;
+}
+
+@InputType()
+export class FollowInput {
+  @Field(() => ID)
+  targetId: string;
 }
